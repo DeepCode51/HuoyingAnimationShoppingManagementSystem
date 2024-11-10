@@ -1,0 +1,240 @@
+/* Style for the div containing links */
+.UserOrder-choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.UserOrder-choose a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    padding:2px 5px;
+}
+.UserOrder-choose a:hover {
+    color: #0066CC;
+}
+
+.AdminShowAllOrder-table th {
+    background-color: #f5f5f5; /* æ·¡ç°è‰² */
+    font-weight: bold;
+    height:40px;
+    color: #333;
+    border:2px solid #dbdbdb;
+}
+.AdminShowAllOrder-table .td1{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td2{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td3{
+    width: 1%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td4{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td5{
+    width: 5%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td6{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td7{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td8{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td9{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table .td10{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowAllOrder-table a {
+    display: inline-block;
+    /*     margin: 10px 0 0 400px; */
+    padding:4px 10px;
+    border-radius:50px;
+    background-color: #ee6969;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.AdminShowAllOrder-table a:hover {
+    background-color: #ff1515;
+}
+
+.AdminShowAllOrder-bottom {
+    margin: 20px 0;
+    text-align: center;
+}
+.AdminShowAllOrder-bottom a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+    background-color: #fff;
+    border: 1px solid #007bff;
+}
+.AdminShowAllOrder-bottom a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+.AdminShowAllOrder-bottom .current-page {
+    font-weight: bold;
+    color: #007bff;
+}
+
+
+
+
+
+.AdminShowRefund-table th {
+    background-color: #f5f5f5; /* æ·¡ç°è‰² */
+    font-weight: bold;
+    height:40px;
+    color: #333;
+    border:2px solid #dbdbdb;
+}
+.AdminShowRefund-table .td1{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td2{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td3{
+    width: 1%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td4{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td5{
+    width: 5%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td6{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td7{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td8{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td9{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .td10{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowRefund-table .a1 {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding:4px 10px;
+    border-radius:50px;
+    background-color: #ee6969;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.AdminShowRefund-table .a1:hover {
+    background-color: #ff1515;
+}
+.AdminShowRefund-table .a2 {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding:4px 10px;
+    border-radius:50px;
+    background-color: #58c6ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.AdminShowRefund-table .a2:hover {
+    background-color: #0092f8;
+}
+
+
+
+
+.AdminShowFigureReportForms-H2Title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+.AdminShowFigureReportForms-table th {
+    background-color: #f5f5f5; /* æ·¡ç°è‰² */
+    font-weight: bold;
+    height:40px;
+    color: #333;
+    border:2px solid #dbdbdb;
+}
+.AdminShowFigureReportForms-table .td1{
+    width: 5%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowFigureReportForms-table .td2{
+    width: 20%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowFigureReportForms-table .td3{
+    width: 20%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowFigureReportForms-table .td4{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.AdminShowFigureReportForms-table .td5{
+    width: 20%;
+    border: 2px solid #d0fffd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

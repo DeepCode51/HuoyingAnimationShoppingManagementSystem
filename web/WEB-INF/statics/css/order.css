@@ -1,0 +1,343 @@
+.UserOrderH2Title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+/* Style for the div containing links */
+.UserOrder-choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.UserOrder-choose a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    padding:2px 5px;
+}
+.UserOrder-choose a:hover {
+    color: #0066CC;
+}
+/* Style for the table */
+.UserOrder-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.UserOrder-table th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+/*.UserOrder-table .th1 {*/
+/*    width: 30%;*/
+/*}*/
+/*.UserOrder-table .th2 {*/
+/*    width: 15%;*/
+/*}*/
+/*.UserOrder-table .th3 {*/
+/*    width: 20%;*/
+/*}*/
+/*.UserOrder-table .th4 {*/
+/*    width: 10%;*/
+/*}*/
+/*.UserOrder-table .th5 {*/
+/*    width: 25%;*/
+/*}*/
+.UserOrder-table .td0 {
+    width: 21%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table .td0 p {
+    margin:0 0 0 -37px;
+    /*     text-indent:0emÃƒÂ¯Ã‚Â¼Ã¢â‚¬Âº */
+}
+.UserOrder-table .td1 {
+    width: 28%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table .td1 .p4{
+    margin:0 0 0 -30px;
+}
+.UserOrder-table .td2 {
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table .td3 {
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table .td3 .p2{
+    /*     margin:0 0 0 -20px; */
+}
+.UserOrder-table .td4 {
+    width: 14%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table .td5 {
+    width: 30%;
+    border: 2px solid #d0fffd;
+}
+.UserOrder-table td {
+    padding: 10px;
+    /*     border: 1px solid #ddd; */
+}
+.UserOrder-table td div {
+    margin-bottom: 10px;
+}
+.UserOrder-table td img {
+    display: block;
+    margin: auto;
+}
+.UserOrder-table td p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.UserOrder-table td strong {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.UserOrder-table td span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #f74646;
+    margin-top: 5px;
+}
+.UserOrder-table td a {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0066CC;
+    padding: 8px 0px;
+    width:55%;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.UserOrder-table td a:hover {
+    background-color: #0059B3;
+}
+.UserOrder-shouhouOK{
+    color: #f74646;
+    /*     font-size: 16px; */
+    margin:20px 0 -10px -20px;
+    text-align: center;
+}
+
+
+
+.UserShowApplyOrder-H2Title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+.UserShowApplyOrder-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.UserShowApplyOrder-table tr th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.UserShowApplyOrder-table .td1{
+    width: 17%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td2{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td3{
+    width: 1%;
+    border: 2px solid #d0fffd;
+    /*margin:;*/
+}
+.UserShowApplyOrder-table .td4{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td5{
+    width: 10%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td6{
+    width: 15%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td7{
+    width: 20%;
+    border: 2px solid #d0fffd;
+}
+.UserShowApplyOrder-table .td8{
+    width: 20%;
+    border: 2px solid #d0fffd;
+}
+
+
+
+
+.UserAddOrderEvaluate-H2Title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+.UserAddOrderEvaluate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.UserAddOrderEvaluate-form label {
+    font-size: 18px;
+    font-weight: bold;
+}
+.UserAddOrderEvaluate-form em {
+    color: red;
+}
+.UserAddOrderEvaluate-form textarea {
+    width: 500px;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.UserAddOrderEvaluate-form input[type="file"] {
+    margin-bottom: 20px;
+}
+.UserAddOrderEvaluate-form input[type="submit"] {
+    background-color: #2eb8e6;
+    color: white;
+    border: none;
+    margin:0 0 10px 190px;
+    padding: 7px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.UserAddOrderEvaluate-form input[type="submit"]:hover {
+    background-color: #0382b1;
+}
+
+
+
+
+
+.ShowUserEvaluate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #00fff6;
+    border-radius: 5px;
+}
+.ShowUserEvaluate img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.ShowUserEvaluate p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 20px;
+}
+.ShowUserEvaluate a {
+    display: inline-block;
+    margin: 10px 0 0 400px;
+    padding: 8px 20px;
+    border-radius:50px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.ShowUserEvaluate a:hover {
+    background-color: #0062cc;
+}
+
+
+
+
+
+.UserAddFigureRefund {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    /*     margin-bottom: 20px; */
+}
+.UserAddFigureRefund label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.UserAddFigureRefund em {
+    color: red;
+}
+.UserAddFigureRefund select, .UserAddFigureRefund textarea, .UserAddFigureRefund input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.UserAddFigureRefund textarea{
+    height:120px;
+}
+.UserAddFigureRefund input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.UserAddFigureRefund input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

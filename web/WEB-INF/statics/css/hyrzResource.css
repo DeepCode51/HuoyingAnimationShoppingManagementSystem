@@ -1,0 +1,74 @@
+.hyrzResource .lianjie{
+    position: relative;
+    top: 0px;
+    left: 10px;
+}
+.hyrzResource>.lianjie>li{
+    height: 75px;
+    width: 800px;
+}
+.hyrzResource>.lianjie>li>img{
+    float:left;
+    width: 50px;
+    height: 50px;
+    margin:10px 0 0 0;
+}
+.hyrzResource>.lianjie>li>p{
+    float: left;
+    line-height: 75px;
+    font-size:20px;
+    z-index: 2;
+}
+.hyrzResource li a img{
+    float: right;
+    width:80px;
+    height:80px;
+    z-index: 2;
+    margin: -8px -40px 0 0;
+}
+@keyframes rotate2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.hyrzResource .lianjie li a:hover{
+    color:red;
+}
+.hyrzResource .lianjie  li:hover img{
+    animation: rotate2 1s linear infinite;
+}
+.hyrzResource2{
+    height: 30px;
+    line-height: 30px;
+}
+.hyrzResource2 p{
+    color: #00ffe3;
+    font-size: 30px;
+    padding: 0px 0 0 28px;
+    margin:20px;
+}
+.hyrzResource2 p span{
+    color:blue;
+}
+.hyrzResource2 .addrenzheButton{
+    position:absolute;
+    top:30px;
+    right:30px;
+    font-size:25px;
+}
+.hyrzResource .TworenzheButton{
+    position:relative;
+    top:-55px;
+    left:900px;
+    width:200px;
+    font-size:20px;
+    clear:both;
+    /*     float: right; */
+}
+.hyrzResource .TworenzheButton a:hover{
+    color: red;
+}
+

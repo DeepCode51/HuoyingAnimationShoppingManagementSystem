@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.ly.dao.RenZhe.RenZheMapper">
+    <!--
+    <select>: 查询数据， 标签中必须是 select 语句
+    id: sql 语句的自定义名称，推荐使用 dao 接口中方法名称，也就是StudentDao接口
+    使用名称表示要执行的 sql 语句
+    resultType: 查询语句的返回结果数据类型，使用全限定类名,这里填domain中的Student实体类的reference
+    -->
+    <!--查询所有忍者-->
+    <select id="allrenzhe" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+    </select>
+    <!--查询所有晓组织成员-->
+    <select id="xiaozuzhi" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+        <where>
+            renzheBelong="晓组织"
+        </where>
+    </select>
+    <!--查询历代火影-->
+    <select id="lidaihuoying" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+        <where>
+            renzheBelong="历代火影"
+        </where>
+    </select>
+    <!--查询所有忍刀七人众成员-->
+    <select id="rendaoqiren" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+        <where>
+            renzheBelong="忍刀七人众"
+        </where>
+    </select>
+    <!--查询所有会八门遁甲的忍者-->
+    <select id="bamendunjia" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+        <where>
+            renzheBelong="八门遁甲"
+        </where>
+    </select>
+    <!--更新时点击该忍者的修改，根据该忍者的id去查找信息-->
+    <select id="queryrenzheById" resultType="com.ly.pojo.Renzhe">
+        <!--要执行的 sql 语句-->
+        select * from renzhe
+        <where>
+            renzheId = #{renzheId}
+        </where>
+    </select>
+    <!--新增忍者-->
+    <insert id="addrenzhe" parameterType="com.ly.pojo.Renzhe">
+        insert into renzhe(renzheName,renzheLink,renzheImage,renzheBelong,renzheIntroduce)
+        values (#{renzheName}, #{renzheLink}, #{renzheImage},#{renzheBelong}, #{renzheIntroduce})
+    </insert>
+    <!--修改忍者-->
+    <update id="updaterenzhe" parameterType="com.ly.pojo.Renzhe">
+        update renzhe
+        set renzheName = #{renzheName},renzheLink = #{renzheLink},renzheImage = #{renzheImage},
+            renzheBelong = #{renzheBelong},renzheIntroduce = #{renzheIntroduce}
+        where renzheId = #{renzheId}
+    </update>
+    <!--删除忍者-->
+    <delete id="deleterenzheById" parameterType="int">
+        delete
+        from renzhe
+        where renzheId = #{renzheId}
+    </delete>
+
+</mapper>

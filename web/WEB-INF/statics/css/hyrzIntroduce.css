@@ -1,0 +1,37 @@
+.whole .Content .ContentMain{
+    /*     border: 2px solid #95eff3; */
+    /*     height: 520px; */
+    /*     border-top:none; */
+    /*     border-bottom-left-radius: 15px; */
+    /*     border-bottom-right-radius: 15px; */
+    overflow-y:auto;
+}
+.whole .Content .ContentMain img{
+    float: left;
+    width: 500px;
+    height: 350px;
+    margin-right: 4px;
+}
+.whole .Content .ContentMain .juqingjieshao{
+    height: 30px;
+    line-height: 30px;
+}
+.whole .Content .ContentMain .juqingjieshao p{
+    font-size:20px;
+    padding: 0 0 0 28px;
+}
+.whole .Content .ContentMain .juqingjieshao p span{
+    color:blue;
+}
+.whole .Content .ContentMain .juqingjieshao .updaterenzheButton{
+    position:absolute;
+    top:30px;
+    right:30px;
+    font-size:25px;
+}
+.whole .Content .ContentMain .wordP p{
+    font-size:20px;
+    line-height:50px;
+    text-indent: 2em;
+    /*     padding: 0 0 0 28px; */
+}

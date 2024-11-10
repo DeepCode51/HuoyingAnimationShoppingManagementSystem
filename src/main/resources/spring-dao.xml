@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    p：p命名空间    c：c命名空间  context：注解实现自动装配   context和aop注意xsi后面也得补充下内容
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--    注意，这个的模板去官网拷贝，在spring framework的Core的IOC容器里-->
+    <!--使用Spring来创建对象，在Spring这些都成为Bean
+    这里的id可以在测试类里调用，
+    类型 变量名=new 类型();
+    Hello hello=new Hello();         ref：引用Spring容器中创建好的对象。  value：具体的值，基本数据类型
+    id=变量名，class=new的对象，property给对象中的属性设置一个值
+    Spring Framework中文文档：
+    https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference
+    -->
+    <!--    开启bean注解的支持-->
+    <context:annotation-config></context:annotation-config>
+    <!--    开启AOP注解支持     JDK(默认 proxy-target-class="false") cglib (proxy-target-class="true")-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <!--1.关联数据库配置文件-->
+    <context:property-placeholder location="classpath:database.properties"></context:property-placeholder>
+    <!--连接池：
+    dbcp：半自动化操作，不能自动连接    c3p0：自动化操作（自动化的加载配置文件，并且可以自动配置到对象中  druid（阿里巴巴的玩意））-->
+    <!--2.这里介绍个c3p0,这里用了数据库配置文件database.properties-->
+        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+            <property name="driverClass" value="${jdbc.driver}"></property>
+            <property name="jdbcUrl" value="${jdbc.url}"></property>
+            <property name="user" value="${jdbc.username}"></property>
+            <property name="password" value="${jdbc.password}"></property>
+            <!--c3p0私有属性-->
+            <property name="minPoolSize" value="10"></property>
+            <property name="maxPoolSize" value="30"></property>
+            <!--关闭连接后不自动commit-->
+            <property name="autoCommitOnClose" value="false"></property>
+            <!--获取连接超时时间,毫秒-->
+            <property name="checkoutTimeout" value="10000"></property>
+            <!--当获取连接失败重试次数-->
+            <property name="acquireRetryAttempts" value="2"></property>
+        </bean>
+
+    <!--   2. DataSource：使用Spring的数据源替换Mybatis的配置  c3p0   dbcp    druid
+        我们这里使用Spring提供的JDBC：org.springframework.jdbc。datasource-->
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+<!--        <property name="url"-->
+<!--                  value="jdbc:mysql://localhost:3306/ssm?useSSL=true&useUnicode=true&characterEncoding=utf8"></property>-->
+<!--        <property name="username" value="root"></property>-->
+<!--        <property name="password" value="qWe325804"></property>-->
+<!--    </bean>-->
+    <!--   3. sqlSessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!--        绑定Mybatis配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath:com/ly/dao/User/UserMapper.xml"></property>
+    </bean>
+    <!--4.配置dao接口扫描包，动态的实现了Dao接口可以注入到Spring容器中!-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--注入sqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <!--要扫描的dao包-->
+        <property name="basePackage" value="com.ly.dao"></property>
+    </bean>
+    <!--    SqlSessionTemplate：就是我们使用的sqlSession-->
+<!--    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">-->
+<!--        &lt;!&ndash;        只能使用构造器注入sqlSessionFactory，因为它没有set方法&ndash;&gt;-->
+<!--        <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;    把接口实现的方法Impl全部导进来，这里的Impl和以往类似，不过这里是建立在Spring接管mybatis的基础上写的，思路都一样的&ndash;&gt;-->
+<!--    <bean id="userMapper" class="com.ly.mapper.UserMapperImpl">-->
+<!--        <property name="session" ref="sqlSession"></property>-->
+<!--    </bean>-->
+
+<!--    <bean id="userMapper2" class="com.ly.mapper.UserMapperImpl2">-->
+<!--        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>-->
+<!--    </bean>-->
+
+
+</beans>

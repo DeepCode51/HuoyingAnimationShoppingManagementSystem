@@ -1,0 +1,73 @@
+.personal2{
+    height: 30px;
+    line-height: 30px;
+}
+.personal2 p{
+    color: #00ffe3;
+    font-size: 30px;
+    padding: 0px 0 0 28px;
+    margin:20px;
+}
+.personalUpdate{
+    position:relative;
+    top:30px;
+    left:50px;
+    height:580px;
+    line-height:40px;
+    font-size:20px;
+}
+.personalUpdate input{
+    height:25px;
+    border-radius:5px;
+    border:0px;
+}
+.personalUpdate .sexUpdate{
+    width: 20px;
+    height: 20px;
+}
+.personalUpdate .personalImgUpdate{
+    position:absolute;
+    top:0;
+    left:600px;
+}
+.personalUpdate .personalImgUpdate img{
+    width:200px;
+    height:200px;
+    margin: 0 0 20px 0;
+}
+.personalUpdate .submitAndreset{
+    position:relative;
+    top:40px;
+    left:360px;
+    width:300px;
+}
+.personalUpdate .submitAndreset .submitUpdate{
+    width: 100px;
+    height: 35px;
+    border-radius:20px;
+    font-size: 20px;
+    line-height: 35px;
+    background: #ff6363;
+    margin:0 20px 0 0;
+}
+.personalUpdate .submitAndreset .resetUpdate{
+    width: 100px;
+    height: 35px;
+    border-radius:20px;
+    font-size: 20px;
+    line-height: 35px;
+    background: #06faff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

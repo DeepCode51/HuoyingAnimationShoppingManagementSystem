@@ -1,0 +1,65 @@
+.UserApplyHyrzResource{
+    overflow-y:auto;
+}
+.UserApplyHyrzResource table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.UserApplyHyrzResource table tr{
+    width: 100%;
+}
+.UserApplyHyrzResource table tr td{
+    text-align: center;
+    /*     width: 50%; */
+    height: 110px;
+    border-collapse: collapse;
+    border: 3px solid #d0fffd;
+}
+.UserApplyHyrzResource .headTd1{
+    color:red;
+    width: 20%;
+}
+.UserApplyHyrzResource .headTd2{
+    color:red;
+    width: 45%;
+}
+.UserApplyHyrzResource .headTd3{
+    color:red;
+    width: 1%;
+}
+.UserApplyHyrzResource .headTd4{
+    color:red;
+    width: 15%;
+}
+.UserApplyHyrzResource .headTd5{
+    color:red;
+    width: 25%;
+}
+
+
+.UserApplyHyrzResource .AdminShowAllResourceApply-HeadTd1{
+    color:red;
+    width: 20%;
+}
+.UserApplyHyrzResource .AdminShowAllResourceApply-HeadTd2{
+    color:red;
+    width: 50%;
+}
+.UserApplyHyrzResource .AdminShowAllResourceApply-HeadTd3{
+    color:red;
+    width: 1%;
+}
+.UserApplyHyrzResource .AdminShowAllResourceApply-HeadTd4{
+    color:red;
+    width: 15%;
+}
+.UserApplyHyrzResource .AdminShowAllResourceApply-HeadTd5{
+    color:red;
+    width: 15%;
+}
+.UserApplyHyrzResource  a{
+    color:red;
+}
+.UserApplyHyrzResource  a:hover{
+    color:#0095ff;
+}

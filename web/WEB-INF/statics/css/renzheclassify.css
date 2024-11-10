@@ -1,0 +1,60 @@
+.renzhejieshao{
+    overflow-y:auto;
+}
+.renzhejieshao table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.renzhejieshao table tr{
+    width: 100%;
+}
+.renzhejieshao table tr td{
+    text-align: center;
+    width: 50%;
+    height: 123px;
+    border-collapse: collapse;
+    border: 3px solid gray;
+}
+.renzhejieshao table tr td a{
+    font-size: 24px;
+}
+.renzhejieshao table tr td p{
+    font-size:20px;
+    line-height:40px;
+    text-align: left;
+    text-indent: 2em;
+}
+.renzhejieshao img{
+    float: left;
+    width: 160px;
+    height: 160px;
+    margin:30px 0;
+}
+.renzhejieshao2{
+    height: 30px;
+    line-height: 30px;
+}
+.renzhejieshao2 p{
+    font-size: 20px;
+    padding: 0 0 0 28px;
+}
+.renzhejieshao2 p span{
+    color:blue;
+}
+.renzhejieshao2 .addrenzheButton{
+    position:absolute;
+    top:30px;
+    right:30px;
+    font-size:25px;
+}
+.renzhejieshao .TworenzheButton{
+    float: right;
+}
+.renzhejieshao .TworenzheButton a:hover{
+    color: red;
+}
+
+
+
+
+

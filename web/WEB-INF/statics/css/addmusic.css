@@ -1,0 +1,20 @@
+.whole .ContentMain .addmusic{
+    width: 100%;
+    text-align: center;
+    font-size:25px;
+    line-height:50px;
+}
+.whole .ContentMain .addmusic input{
+    height:30px;
+    border:1px;
+    border-radius:5px;
+}
+.whole .ContentMain .addmusic textarea{
+    border:1px;
+    border-radius:5px;
+}
+.whole .ContentMain .addmusic .IntroduceAreaSize{
+    margin:10px 0 0 0;
+    width: 400px;
+    height: 300px;
+}

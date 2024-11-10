@@ -1,0 +1,271 @@
+.shouyecontent{
+    position: relative;
+    width: 100%;
+}
+.shouyecontent>img{
+    position: relative;
+    left: 50%;
+    margin:0 0 0 -225px;
+    width: 450px;
+    height: 220px;
+}
+.shouyecontent .daohang{
+    position: relative;
+    top:25px;
+    left: 10px;
+}
+.shouyecontent .daohang p{
+    color: #06faff;
+    font-size: 35px;
+}
+.shouyecontent .daohang img{
+    position: relative;
+    top: -35px;
+    left: 150px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.renzheyvlan{
+    position: relative;
+    top: -130px;
+}
+.renzheyvlan>p{
+    position: relative;
+    top: 130px;
+    left: 40px;
+    color: #00ff7d;
+    font-size: 25px;
+}
+.renzheyvlan>a>img{
+    position: relative;
+    top: 35px;
+    left: 250px;
+    width:100px;
+    height:100px;
+}
+.renzheyvlan table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.renzheyvlan table tr{
+    width: 100%;
+}
+.renzheyvlan table tr td{
+    text-align: center;
+    width: 50%;
+    height: 123px;
+    border-collapse: collapse;
+    border: 3px solid gray;
+}
+.renzheyvlan table tr td a{
+    font-size: 24px;
+}
+.renzheyvlan table tr td p{
+    font-size:20px;
+    line-height:40px;
+    text-align: left;
+    text-indent: 2em;
+}
+.renzheyvlan img{
+    float: left;
+    width: 160px;
+    height: 160px;
+    margin:30px 0;
+}
+.renzheyvlan .TworenzheButton{
+    float: right;
+}
+.renzheyvlan .TworenzheButton a:hover{
+    color: red;
+}
+
+
+.OPEDyvlan{
+    position: relative;
+    top: -150px;
+    z-index: 3;
+}
+.OPEDyvlan>p{
+    position: relative;
+    top: 70px;
+    left: 40px;
+    color: #ffa9fe;
+    font-size: 30px;
+}
+.OPEDyvlan>a>img{
+    position: relative;
+    top: 5px;
+    left: 250px;
+    width:100px;
+    height:100px;
+}
+.OPEDshunxv{
+    margin: 10px 0 0 20px;
+}
+.OPEDshunxv li{
+    width: 1000px;
+    height: 110px;
+    border:1px solid gray;
+    border-radius: 55px;
+    background-color: #e9f0f6;
+    opacity: 0.7;
+    margin:0 0 18px 0;
+}
+.OPEDshunxv p{
+    font-size:20px;
+    margin: 10px 0 20px 40px;
+}
+@keyframes rotate2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.OPEDshunxv li:hover img{
+    animation: rotate2 1s linear infinite;
+}
+.OPEDshunxv img{
+    position: relative;
+    top: -68px;
+    left: 135px;
+    width: 40px;
+    height: 40px;
+}
+.OPEDshunxv audio{
+    position: relative;
+    top: -60px;
+    left: 280px;
+    width: 400px;
+    height: 60px;
+}
+.OPEDshunxv i{
+    position: relative;
+    top:-82px;
+    left: 265px;
+}
+.OPEDshunxv .TworenzheButton{
+    position:relative;
+    top:-130px;
+    left:800px;
+    font-size:20px;
+    width:200px;
+}
+.OPEDshunxv .TworenzheButton a:hover{
+    color:red;
+}
+
+
+
+
+
+
+
+
+.fenxiang{
+    width: 100%;
+    position: relative;
+    top:-180px;
+}
+.fenxiang>p{
+    position: relative;
+    top: 70px;
+    left: 25px;
+    color: #00ffe3;
+    font-size: 30px;
+    z-index: 2;
+}
+.fenxiang>a>img{
+    position: relative;
+    top: 5px;
+    left: 250px;
+    width:100px;
+    height:100px;
+}
+.fenxiang .lianjie{
+    position: relative;
+    top: 0px;
+    left: 10px;
+}
+.fenxiang>.lianjie>li{
+    height: 75px;
+    width: 800px;
+}
+.fenxiang>.lianjie>li>img{
+    float:left;
+    width: 50px;
+    height: 50px;
+    margin:10px 0 0 0;
+}
+.fenxiang>.lianjie>li>p{
+    float: left;
+    line-height: 75px;
+    font-size:20px;
+    z-index: 2;
+}
+.fenxiang li a img{
+    float: right;
+    width:80px;
+    height:80px;
+    z-index: 2;
+    margin: -8px -40px 0 0;
+}
+@keyframes rotate2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.fenxiang .lianjie li a:hover{
+    color:red;
+}
+.fenxiang .lianjie  li:hover img{
+    animation: rotate2 1s linear infinite;
+}
+.fenxiang .TworenzheButton{
+    position:relative;
+    top:-55px;
+    left:900px;
+    width:200px;
+    font-size:20px;
+    clear:both;
+    /*     float: right; */
+}
+.fenxiang .TworenzheButton a:hover{
+    color: red;
+}
+
+
+
+
+
+.shouyebottomback{
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+    height: 180px;
+    background-image: url("../images/index/bottom.png");
+    background-size: 100% 100%;
+    opacity: 0.3;
+}
+.shouyebottom{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 180px;
+    text-align: center;
+}
+.shouyebottom p{
+    font-size: 30px;
+    color: #aee4ff;
+    margin: 5px 0 0 5px;
+}
+.shouyebottom a{
+    color: #ff7676;
+}

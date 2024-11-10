@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    日志文件，用来在控制台告诉用户做了哪些事，前面是控制日志，右边是控制台输出-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+</configuration>
+        <!--        支持中文的 url-->
+        <!--        jdbc:mysql://localhost:3306/ssm?useUnicode=true&characterEncoding=utf-8-->

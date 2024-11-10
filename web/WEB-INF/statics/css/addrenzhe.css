@@ -1,0 +1,37 @@
+.whole .ContentMain .addrenzhe{
+    width: 100%;
+    text-align: center;
+    font-size:25px;
+    line-height:50px;
+}
+.whole .ContentMain .addrenzhe input{
+    height:30px;
+    border:1px;
+    border-radius:5px;
+}
+.whole .ContentMain .addrenzhe textarea{
+    border:1px;
+    border-radius:5px;
+}
+.addrenzhe .submitOK{
+    margin:20px 20px 20px 0;
+    height: 38px;
+    font-size: 16px;
+    border:1px solid;
+    border-radius: 3px;
+    width: 100px;
+    color: #FFF;
+    border-color: #F40;
+    background: #F40;
+}
+.addrenzhe .submitNKOK{
+    margin:20px 20px 20px 0;
+    height: 38px;
+    font-size: 16px;
+    border:1px solid;
+    border-radius: 3px;
+    width: 100px;
+    color: #ff2a00;
+    border-color: #F40;
+    background: #e6fbff;
+}

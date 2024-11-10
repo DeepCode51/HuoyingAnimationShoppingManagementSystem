@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.ly.dao.Order.OrderMapper">
+    <!--
+    <select>: 查询数据， 标签中必须是 select 语句
+    id: sql 语句的自定义名称，推荐使用 dao 接口中方法名称，也就是StudentDao接口
+    使用名称表示要执行的 sql 语句
+    resultType: 查询语句的返回结果数据类型，使用全限定类名,这里填domain中的Student实体类的reference
+    -->
+
+    <!--新增订单-->
+    <insert id="addFigureOrder" parameterType="com.ly.pojo.Order">
+        insert into `order`
+        values (#{orderId},#{userid},#{username},#{figureId},#{figureName},#{figureQuantity},#{price},#{payWay},#{deliveryStatus},#{payTime},#{fulladdress},#{isreceive},#{isevaluate},#{isrefundprocess},#{ifSubmitRefund},null,null)
+    </insert>
+
+    <!--查询订单数量-->
+    <select id="queryOrderCount" resultType="int">
+        select count(*) from `order`
+    </select>
+
+    <select id="queryUserOrder" resultMap="userOrder">
+        select fo.orderId orderId,fo.username username,fo.figureQuantity figureQuantity,fo.price price,fo.payWay payWay,
+               fo.deliveryStatus deliveryStatus,fo.payTime payTime,fo.fulladdress fulladdress,fo.isreceive isreceive,
+               fo.isevaluate isevaluate,fo.isrefundprocess isrefundprocess,fo.ifSubmitRefund ifSubmitRefund,
+               fo.trackingBelong trackingBelong,fo.trackingNumber trackingNumber,
+               f.figureId figureId,f.figureName figureName,f.figureImage figureImage,f.figurePrice figurePrice
+        from figure f,`order` fo
+        <where>
+            f.figureId=fo.figureId and fo.userid=#{userid}
+            <if test="isreceive == 'false'">and fo.isreceive=#{isreceive}</if>
+            <if test="isreceive == 'true'">and fo.isreceive=#{isreceive}</if>
+            <if test="isevaluate == 'false'">and fo.isevaluate=#{isevaluate}</if>
+            <if test="isevaluate == 'true'">and fo.isevaluate=#{isevaluate}</if>
+        </where>
+    </select>
+    <resultMap id="userOrder" type="com.ly.pojo.Order">
+        <result property="orderId" column="orderId"/>
+        <result property="username" column="username"/>
+        <result property="figureQuantity" column="figureQuantity"/>
+        <result property="price" column="price"/>
+        <result property="payWay" column="payWay"/>
+        <result property="deliveryStatus" column="deliveryStatus"/>
+        <result property="payTime" column="payTime"/>
+        <result property="fulladdress" column="fulladdress"/>
+        <result property="isreceive" column="isreceive"/>
+        <result property="isevaluate" column="isevaluate"/>
+        <result property="isrefundprocess" column="isrefundprocess"/>
+        <result property="ifSubmitRefund" column="ifSubmitRefund"/>
+        <result property="trackingBelong" column="trackingBelong"/>
+        <result property="trackingNumber" column="trackingNumber"/>
+        <association property="figure" javaType="com.ly.pojo.Figure">
+            <result property="figureId" column="figureId"/>
+            <result property="figureName" column="figureName"/>
+            <result property="figureImage" column="figureImage"/>
+            <result property="figurePrice" column="figurePrice"/>
+        </association>
+    </resultMap>
+
+    <!--确认收货-->
+    <update id="updateIsreceive" parameterType="com.ly.pojo.Order">
+        update `order`
+        set isreceive = 'true'
+        where orderId=#{orderId};
+    </update>
+
+    <!--通过订单号查询订单-->
+    <select id="queryOrderByOrderId" resultType="com.ly.pojo.Order">
+        select * from `order`
+        where orderId=#{orderId}
+    </select>
+
+    <!--用户确认收货-->
+    <update id="updateIsevaluate" parameterType="com.ly.pojo.Order">
+        update `order`
+        set isevaluate = 'true'
+        where orderId=#{orderId};
+    </update>
+
+    <!--管理员完成退款处理,修改isrefundprocess,变为true-->
+    <update id="updateIsrefundprocess" parameterType="com.ly.pojo.Order">
+        update `order`
+        set isrefundprocess = 'true'
+        where orderId=#{orderId};
+    </update>
+
+    <!--管理员完成更换地址处理,修改order表里的fulladdress，地址变更为‘用户填写的申请内容’-->
+    <update id="updateOrderFulladdress" parameterType="com.ly.pojo.Refund">
+        update `order`
+        set fulladdress = #{refundReason}
+        where orderId=#{orderId};
+    </update>
+
+    <!--管理员查询所有订单-->
+    <select id="queryAllOrder" resultMap="allOrder">
+        select fo.orderId orderId,fo.username username,fo.figureQuantity figureQuantity,fo.price price,fo.payWay payWay,
+               fo.deliveryStatus deliveryStatus,fo.payTime payTime,fo.fulladdress fulladdress,fo.isreceive isreceive,
+               fo.isevaluate isevaluate,fo.isrefundprocess isrefundprocess,fo.ifSubmitRefund ifSubmitRefund,
+               fo.trackingBelong trackingBelong,fo.trackingNumber trackingNumber,
+        f.figureId figureId,f.figureName figureName,f.figureImage figureImage,f.figurePrice figurePrice
+        from figure f,`order` fo
+        where f.figureId=fo.figureId
+<!--        <where>-->
+<!--            f.figureId=fo.figureId-->
+<!--            <if test="isreceive == 'false'">and fo.isreceive=#{isreceive}</if>-->
+<!--            <if test="isreceive == 'true'">and fo.isreceive=#{isreceive}</if>-->
+<!--            <if test="isevaluate == 'false'">and fo.isevaluate=#{isevaluate}</if>-->
+<!--            <if test="isevaluate == 'true'">and fo.isevaluate=#{isevaluate}</if>-->
+<!--        </where>-->
+    </select>
+    <resultMap id="allOrder" type="com.ly.pojo.Order">
+        <result property="orderId" column="orderId"/>
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="figureQuantity" column="figureQuantity"/>
+        <result property="price" column="price"/>
+        <result property="payWay" column="payWay"/>
+        <result property="deliveryStatus" column="deliveryStatus"/>
+        <result property="payTime" column="payTime"/>
+        <result property="fulladdress" column="fulladdress"/>
+        <result property="isreceive" column="isreceive"/>
+        <result property="isevaluate" column="isevaluate"/>
+        <result property="isrefundprocess" column="isrefundprocess"/>
+        <result property="ifSubmitRefund" column="ifSubmitRefund"/>
+        <result property="trackingBelong" column="trackingBelong"/>
+        <result property="trackingNumber" column="trackingNumber"/>
+        <association property="figure" javaType="com.ly.pojo.Figure">
+            <result property="figureId" column="figureId"/>
+            <result property="figureName" column="figureName"/>
+            <result property="figureImage" column="figureImage"/>
+            <result property="figurePrice" column="figurePrice"/>
+        </association>
+    </resultMap>
+
+    <!--管理员查询所有订单(页码和每页数量限制)-->
+    <select id="queryAllOrderSP" resultMap="allOrderSP">
+        select fo.orderId orderId,fo.userid userid,fo.username username,fo.figureQuantity figureQuantity,fo.price price,fo.payWay payWay,
+               fo.deliveryStatus deliveryStatus,fo.payTime payTime,fo.fulladdress fulladdress,fo.isreceive isreceive,
+               fo.isevaluate isevaluate,fo.isrefundprocess isrefundprocess,fo.ifSubmitRefund ifSubmitRefund,
+               fo.trackingBelong trackingBelong,fo.trackingNumber trackingNumber,
+               f.figureId figureId,f.figureName figureName,f.figureImage figureImage,f.figurePrice figurePrice
+        from figure f,`order` fo
+        where f.figureId=fo.figureId limit #{startPlace},#{pageSize}
+    </select>
+    <resultMap id="allOrderSP" type="com.ly.pojo.Order">
+        <result property="orderId" column="orderId"/>
+        <result property="userid" column="userid"/>
+        <result property="username" column="username"/>
+        <result property="figureQuantity" column="figureQuantity"/>
+        <result property="price" column="price"/>
+        <result property="payWay" column="payWay"/>
+        <result property="deliveryStatus" column="deliveryStatus"/>
+        <result property="payTime" column="payTime"/>
+        <result property="fulladdress" column="fulladdress"/>
+        <result property="isreceive" column="isreceive"/>
+        <result property="isevaluate" column="isevaluate"/>
+        <result property="isrefundprocess" column="isrefundprocess"/>
+        <result property="ifSubmitRefund" column="ifSubmitRefund"/>
+        <result property="trackingBelong" column="trackingBelong"/>
+        <result property="trackingNumber" column="trackingNumber"/>
+        <association property="figure" javaType="com.ly.pojo.Figure">
+            <result property="figureId" column="figureId"/>
+            <result property="figureName" column="figureName"/>
+            <result property="figureImage" column="figureImage"/>
+            <result property="figurePrice" column="figurePrice"/>
+        </association>
+    </resultMap>
+
+    <!--管理员确认发货-->
+<!--    <update id="AdminDeliveryStatus" parameterType="com.ly.pojo.Order">-->
+<!--        update order-->
+<!--        set deliveryStatus = '已发货'-->
+<!--        where orderId=#{orderId};-->
+<!--    </update>-->
+
+    <!--管理员确认发货-->
+    <update id="AdminDeliveryStatus" parameterType="com.ly.pojo.Order">
+        update `order`
+        set deliveryStatus = '已发货',trackingBelong = #{trackingBelong},trackingNumber = #{trackingNumber}
+        where orderId=#{orderId};
+    </update>
+
+    <!--管理员删除订单-->
+    <delete id="deleteOrderById" parameterType="String">
+        delete
+        from `order`
+        where orderId=#{orderId};
+    </delete>
+
+<!--    用户点击我的订单，查看以时间进行分组的订单，有需求可以点击后面的“查看订单详情”则可以查看该时间订单的所有商品购买-->
+<!--    <select id="queryUserOrderDateGroup" resultMap="userOrderDateGroup">-->
+<!--        select fo.orderId orderId,fo.username username,fo.figureQuantity figureQuantity,-->
+<!--        fo.price price,fo.payWay payWay,fo.deliveryStatus deliveryStatus,-->
+<!--        fo.payTime payTime,fo.fulladdress fulladdress,fo.isreceive isreceive,-->
+<!--        fo.isevaluate isevaluate,fo.isrefundprocess isrefundprocess,-->
+<!--        f.figureId figureId,f.figureName figureName,f.figureImage figureImage,f.figurePrice figurePrice,-->
+<!--        count(*) orderNumber-->
+<!--        from figure f,order fo-->
+<!--        <where>-->
+<!--            f.figureId=fo.figureId and fo.userid=#{userid}-->
+<!--        </where>-->
+<!--        group by payTime-->
+<!--    </select>-->
+<!--    <resultMap id="userOrderDateGroup" type="com.ly.pojo.Order">-->
+<!--        <result property="orderId" column="orderId"/>-->
+<!--        <result property="username" column="username"/>-->
+<!--        <result property="figureQuantity" column="figureQuantity"/>-->
+<!--        <result property="price" column="price"/>-->
+<!--        <result property="payWay" column="payWay"/>-->
+<!--        <result property="deliveryStatus" column="deliveryStatus"/>-->
+<!--        <result property="payTime" column="payTime"/>-->
+<!--        <result property="fulladdress" column="fulladdress"/>-->
+<!--        <result property="isreceive" column="isreceive"/>-->
+<!--        <result property="isevaluate" column="isevaluate"/>-->
+<!--        <result property="isrefundprocess" column="isrefundprocess"/>-->
+<!--        <association property="figure" javaType="com.ly.pojo.Figure">-->
+<!--            <result property="figureId" column="figureId"/>-->
+<!--            <result property="figureName" column="figureName"/>-->
+<!--            <result property="figureImage" column="figureImage"/>-->
+<!--            <result property="figurePrice" column="figurePrice"/>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+</mapper>

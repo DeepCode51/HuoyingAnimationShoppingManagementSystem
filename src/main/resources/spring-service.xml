@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描service相关的bean -->
+    <context:component-scan base-package="com.ly.service"/>
+
+    <!--UserServiceImpl注入到IOC容器中-->
+    <bean id="UserServiceImpl" class="com.ly.service.User.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+    <!--FigureServiceImpl注入到IOC容器中-->
+    <bean id="FigureServiceImpl" class="com.ly.service.Figure.FigureServiceImpl">
+        <property name="figureMapper" ref="figureMapper"/>
+    </bean>
+    <!--OrderServiceImpl注入到IOC容器中-->
+    <bean id="OrderServiceImpl" class="com.ly.service.Order.OrderServiceImpl">
+        <property name="orderMapper" ref="orderMapper"/>
+    </bean>
+    <!--OrderEvaluateServiceImpl注入到IOC容器中-->
+    <bean id="OrderEvaluateServiceImpl" class="com.ly.service.OrderEvaluate.OrderEvaluateServiceImpl">
+        <property name="orderEvaluateMapper" ref="orderEvaluateMapper"/>
+    </bean>
+    <!--RefundServiceImpl注入到IOC容器中-->
+    <bean id="RefundServiceImpl" class="com.ly.service.Refund.RefundServiceImpl">
+        <property name="refundMapper" ref="refundMapper"/>
+    </bean>
+    <!--RenZheServiceImpl注入到IOC容器中-->
+    <bean id="RenZheServiceImpl" class="com.ly.service.RenZhe.RenZheServiceImpl">
+        <property name="renZheMapper" ref="renZheMapper"/>
+    </bean>
+    <!--MusicServiceImpl注入到IOC容器中-->
+    <bean id="MusicServiceImpl" class="com.ly.service.Music.MusicServiceImpl">
+        <property name="musicMapper" ref="musicMapper"/>
+    </bean>
+    <!--HyrzIntroduceServiceImpl注入到IOC容器中-->
+    <bean id="HyrzIntroduceServiceImpl" class="com.ly.service.HyrzIntroduce.HyrzIntroduceServiceImpl">
+        <property name="hyrzIntroduceMapper" ref="hyrzIntroduceMapper"/>
+    </bean>
+    <!--HyrzResourceServiceImpl注入到IOC容器中-->
+    <bean id="HyrzResourceServiceImpl" class="com.ly.service.HyrzResource.HyrzResourceServiceImpl">
+        <property name="hyrzResourceMapper" ref="hyrzResourceMapper"/>
+    </bean>
+    <!--CommentServiceImpl注入到IOC容器中-->
+    <bean id="CommentServiceImpl" class="com.ly.service.Comment.CommentServiceImpl">
+        <property name="commentMapper" ref="commentMapper"/>
+    </bean>
+    <!--IndexServiceImpl注入到IOC容器中-->
+    <bean id="IndexServiceImpl" class="com.ly.service.Index.IndexServiceImpl">
+        <property name="indexMapper" ref="indexMapper"/>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+</beans>

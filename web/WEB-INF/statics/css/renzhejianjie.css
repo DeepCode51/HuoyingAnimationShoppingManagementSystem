@@ -1,0 +1,75 @@
+.renzhejieshao{
+    /*border: 2px solid yellow;*/
+    /*height: 520px;*/
+    /*border-top:none;*/
+    /*border-bottom-left-radius: 15px;*/
+    /*border-bottom-right-radius: 15px;*/
+    overflow-y:auto;
+}
+.renzhejieshao table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.renzhejieshao table tr{
+    width: 100%;
+}
+.renzhejieshao table tr td{
+    text-align: center;
+    width: 50%;
+    height: 123px;
+    border-collapse: collapse;
+    border: 3px solid gray;
+}
+.renzhejieshao table tr td a{
+    font-size: 20px;
+}
+.renzhejieshao table tr td p{
+    text-align: left;
+    text-indent: 2em;
+}
+.renzhejieshao img{
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-bottom: -2px;
+    margin-right: 2px;
+}
+.renzhejieshao2{
+    height: 30px;
+    line-height: 30px;
+}
+.renzhejieshao2 p{
+    font-size: 20px;
+    padding: 0 0 0 28px;
+}
+.renzhejieshao2 p span{
+    color:blue;
+}
+.renzhejieshao2 .addrenzheButton{
+    position:absolute;
+    top:30px;
+    right:30px;
+    font-size:25px;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding:4px 10px;
+    border:2px solid #ee6969;
+    border-radius:50px;
+    background-color: #ee6969;
+    /*     color: #fff; */
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+.renzhejieshao2 .addrenzheButton a{
+    color: #fff;
+}
+.renzhejieshao2 .addrenzheButton:hover{
+    background-color: #f34242;
+}
+.renzhejieshao .TworenzheButton{
+    float: right;
+}
+.renzhejieshao .TworenzheButton a:hover{
+    color: red;
+}

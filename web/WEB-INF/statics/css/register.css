@@ -1,0 +1,128 @@
+.tologin{
+    font-size: 30px;
+    color: aquamarine;
+    text-underline: aquamarine;
+}
+.tologin:hover{
+    color: aqua;
+}
+.addressSelectProvince{
+    width: 185px;
+}
+.addressSelectCity{
+    width: 185px;
+}
+.xinghao{
+    color: red;
+    font-size: 25px;
+}
+span{
+    /*color: red;*/
+    font-size: 14px;
+    /*height: 30px;*/
+    line-height: 45px;
+}
+.yzm{
+    background: url("../images/register/yzm.png") no-repeat 0 0;
+    width: 40px;
+    height: 20px;
+    /*opacity: 0.8;*/
+    background-size:100% 100%;
+    color: black;
+}
+.main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -400px 0 0 -400px;
+    /*margin-left: -500px;*/
+    width: 800px;
+    height: 800px;
+    border-radius: 400px;
+    /*background: white;*/
+    background: url("../images/register/yzm.png") no-repeat 0 0px;
+    /*opacity: 0.9;*/
+    background-size:100% 100%;
+    overflow: hidden;
+    /*background: url("../images/register/registerback.png") no-repeat 0 0;*/
+    /*height: 100%;*/
+    opacity: 1;
+    /*background-size:100% 100%;*/
+}
+.mainContent{
+    position: relative;
+    top: 20%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    margin: 0 0 0 -350px;
+}
+.maintitle{
+    position: relative;
+    top: -50px;
+    left: 30%;
+    height:50px;
+}
+.maintitle h3{
+    font-size: 30px;
+}
+.maintitle a{
+    font-size: 40px;
+}
+.contentSubmit{
+    position: relative;
+    top: 50px;
+    left: 34%;
+    font-size:30px;
+    height:50px;
+}
+.registerContent{
+    font-size: 20px;
+
+    /*background: url("../images/register/yzm.png") no-repeat 0 0px;*/
+    /*opacity: 0.9;*/
+    /*background-size:100% 100%;*/
+}
+canvas{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#evanyou{
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+.registerwhole{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    margin-left:-960px;
+    width: 1920px;
+    height: 1680px;
+}
+.registerback4{
+    position: absolute;
+    left:0;
+    top: 25%;
+    margin-top: -150px;
+    background: url("../images/register/registerback4.png") no-repeat 0 0px;
+    height: 350px;
+    width:200px;
+    opacity: 0.9;
+    background-size:100% 100%;
+}
+.registerback6{
+    position: absolute;
+    right:0;
+    top: 25%;
+    margin-top: -150px;
+    background: url("../images/register/registerback6.png") no-repeat 0 0px;
+    height: 350px;
+    width:200px;
+    opacity: 0.9;
+    background-size:100% 100%;
+}

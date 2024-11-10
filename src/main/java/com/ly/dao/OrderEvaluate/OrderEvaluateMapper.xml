@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.ly.dao.OrderEvaluate.OrderEvaluateMapper">
+    <!--
+    <select>: 查询数据， 标签中必须是 select 语句
+    id: sql 语句的自定义名称，推荐使用 dao 接口中方法名称，也就是StudentDao接口
+    使用名称表示要执行的 sql 语句
+    resultType: 查询语句的返回结果数据类型，使用全限定类名,这里填domain中的Student实体类的reference
+    -->
+    <!--评价该订单，insert新增订单评论-->
+    <insert id="addFigureEvaluate" parameterType="com.ly.pojo.FigureOrderEvaluate">
+        insert into orderEvaluate
+        values (#{orderId},#{userid},#{username},#{figureId},#{figureName},#{figureImage},#{evaluateTime},#{evaluateContent});
+    </insert>
+    <!--查询该评论信息通过orderId-->
+    <select id="queryEvaluateByOrderId" resultType="com.ly.pojo.FigureOrderEvaluate">
+        select * from orderEvaluate
+        where orderId=#{orderId}
+    </select>
+    <!--删除该评论信息通过orderId-->
+    <delete id="deleteEvaluateByOrderId">
+        delete
+        from orderEvaluate
+        where orderId=#{orderId};
+    </delete>
+<!--    &lt;!&ndash;管理员查看所有评论&ndash;&gt;-->
+<!--    <select id="queryAllEvaluate" resultMap="allEvaluate">-->
+<!--        select be.boid boid,be.becontent becontent,be.bedate bedate,be.beimage beimage,be.bequality bequality,-->
+<!--               bo.uid uid,bo.bid bid,-->
+<!--               b.bname bname,b.bimage1 bimage1,u.nickname nickname,u.uheadphoto uheadphoto-->
+<!--        from bookevaluate be,bookorder bo,book b,user u-->
+<!--        where be.boid=bo.boid and bo.bid=b.bid and bo.uid=u.uid limit #{startPlace},#{pageSize}-->
+<!--    </select>-->
+<!--    <resultMap id="allEvaluate" type="BookEvaluate">-->
+<!--        <result property="boid" column="boid"/>-->
+<!--        <result property="becontent" column="becontent"/>-->
+<!--        <result property="bedate" column="bedate"/>-->
+<!--        <result property="beimage" column="beimage"/>-->
+<!--        <result property="bequality" column="bequality"/>-->
+<!--        <association property="bookOrder" javaType="BookOrder">-->
+<!--            <result property="uid" column="uid"/>-->
+<!--            <result property="bid" column="bid"/>-->
+<!--            <association property="books" javaType="Books">-->
+<!--                <result property="bname" column="bname"/>-->
+<!--                <result property="bimage1" column="bimage1"/>-->
+<!--            </association>-->
+<!--            <association property="user" javaType="User">-->
+<!--                <result property="nickname" column="nickname"/>-->
+<!--                <result property="uheadphoto" column="uheadphoto"/>-->
+<!--            </association>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+
+    <!--查看评论总数-->
+    <select id="queryEvaluateCount" resultType="int">
+        select count(*) from orderEvaluate
+    </select>
+
+    <!--用户查看商品评论-->
+    <select id="queryFigureEvaluate" resultMap="figureEvaluate">
+        select FOE.orderId orderId,FOE.userid userid,FOE.figureId figureId,FOE.figureName figureName,
+               FOE.figureImage figureImage,FOE.evaluateContent evaluateContent,FOE.evaluateTime evaluateTime,
+               u.username username,u.userAvatar userAvatar
+        from FigureOrderEvaluate FOE,user u
+        where FOE.userid=u.userid and FOE.figureId=#{figureId}
+    </select>
+    <resultMap id="figureEvaluate" type="com.ly.pojo.FigureOrderEvaluate">
+        <result property="orderId" column="orderId"/>
+        <result property="userid" column="userid"/>
+        <result property="figureId" column="figureId"/>
+        <result property="figureName" column="figureName"/>
+        <result property="figureImage" column="figureImage"/>
+        <result property="evaluateContent" column="evaluateContent"/>
+        <result property="evaluateTime" column="evaluateTime"/>
+        <association property="user" javaType="com.ly.pojo.User">
+            <result property="username" column="username"/>
+            <result property="userAvatar" column="userAvatar"/>
+        </association>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,17 @@
+.figureClassify{
+    margin-left: 30px;
+    margin-bottom:10px;
+}
+.figureClassify li{
+    display: inline-block;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    font-size:16px;
+    margin-right:10px;
+    padding:3px 4px;
+    /*background-color: #ff004c;*/
+}
+.figureClassify li a{
+    color: #10107e;
+    font-weight:bold;
+}

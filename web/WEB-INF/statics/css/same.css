@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    /*overflow-y: scroll;*/
+}
+body{
+    /*height: 100%;*/
+    /*overflow-x:hidden;*/
+    /*overflow-y:hidden;*/
+    position: fixed;
+    background: url("../images/same/index7ban2.png") no-repeat ;
+    width: 100%;
+    height: 100%;
+    /*     opacity: 0.2; */
+    background-size:100% 100%;
+}
+li{
+    list-style-type: none;
+}
+ul{
+    list-style-image: none;
+}
+a{
+    text-decoration: none;
+    font-family: "幼圆";
+}
+p{
+    font-family: "幼圆";
+}
+abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    cursor: url("../images/same/Glows Link.cur"),auto;
+    /*cursor: crosshair;*/
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*以下为构造首页时的css，与其他页部分相同的css*/
+.indexback{
+    background: url("../images/same/index7ban.jpg") no-repeat  0 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-size:100% 100%;
+}
+.whole{
+    position: absolute;
+    top:0;
+    left: 50%;
+    width: 1920px;
+    height: 100%;
+    margin-left: -960px;
+    overflow-y:scroll;
+}
+.whole .top{
+    position: relative;
+    top: 0;
+    /*left: 50%;*/
+    width: 100%;
+    height: 200px;
+    /*background: #d76c6c;*/
+    background: url("../images/same/SameTopBack.jpg") no-repeat  0 0;
+    background-size:100% 100%;
+    opacity: 0.8;
+}
+.whole .top .muye{
+    position:absolute;
+    top:12.5%;
+    left:10%;
+    width: 150px;
+    height: 150px;
+    /*     margin-left: 50px; */
+}
+.whole .top .narutologo{
+    position:absolute;
+    top:-150px;
+    left:50%;
+    width: 1000px;
+    height: 500px;
+    margin-left:-550px;
+}
+.whole .top .bgm{
+    position: absolute;
+    top:20px;
+    right:200px;
+}
+.whole .top .bgm p{
+    padding: 0 0 3px 18px;
+}
+.whole .top .navUpperRight{
+    height: 60px;
+    line-height: 60px;
+}
+.whole .top .navUpperRight .imglogin{
+    position:relative;
+    top:100px;
+    left:80%;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+}
+.whole .top .navUpperRight .imgregister{
+    position:relative;
+    top:103px;
+    left:80%;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+}
+.whole .top .navUpperRight .imgcancel{
+    position:relative;
+    top:95px;
+    left:80%;
+    width: 70px;
+    height: 70px;
+    z-index: 10;
+}
+.whole .top .juanzhou{
+    position:relative;
+    top:25px;
+    left:150px;
+    width: 1600px;
+    height: 550px;
+}
+.whole .top .navimg{
+    position: absolute;
+    top:150px;
+    left:250px;
+}
+.whole .top .navimg img{
+    width: 200px;
+    height: 300px;
+    margin-right:-55px;
+}
+.whole .top .navimg .navzuozhu{
+    width: 250px;
+    margin-left:-20px;
+}
+.whole .top .nav{
+    position: relative;
+    width:1200px;
+    overflow:hidden;
+    top:-145px;
+    left:400px;
+}
+.whole .top .nav li{
+    display:inline-block;
+    font-size:30px;
+    margin-right:80px;
+}
+.whole .top .nav li a{
+    /*color: cornflowerblue;*/
+    color: #1874ff;
+}
+.whole .top .nav li a:hover{
+    color: #ff0000;
+}
+.whole .navleftback{
+    position: relative;
+    top: 350px;
+    left: 200px;
+    width: 350px;
+    height: 600px;
+    background: url("../images/same/juanzhou3.png") no-repeat 0 0;
+    /*height: 100%;*/
+    /*opacity: 0.2;*/
+    background-size:100% 100%;
+}
+.whole .navleftback .navleft{
+    position: relative;
+    width:250px;
+    overflow:hidden;
+    top:125px;
+    left:55px;
+    text-align:center;
+    opacity:0.5;
+}
+.whole .navleftback .navleft li{
+    font-size:35px;
+    margin:0 0 20px 0;
+}
+.whole .navleftback .navleft li a{
+    /*color: cornflowerblue;*/
+    color: #00e1ff;
+}
+.whole .navleftback .navleft li a:hover{
+    color: #ff0000;
+}
+.whole .Content{
+    /*overflow: hidden;*/
+    position: relative;
+    top: -190px;
+    left: 600px;
+    width: 1070px;
+    /*height: 1000px;*/
+    /*background: red;*/
+    /*opacity: 0.3;*/
+
+    background-color: rgba(102, 146, 191, 0.44);
+    /*边框*/
+    border: solid 1px rgba(102, 146, 191, 0.68);
+    /*边角弧度*/
+    border-radius: 10px;
+    /*阴影*/
+    -moz-box-shadow:2px 2px 5px #333333;
+    -webkit-box-shadow:2px 2px 5px #333333;
+    box-shadow: 7px 15px 30px #285a63;
+
+    /*延迟过度*/
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box;
+    -o-box-sizing:border-box; /* Opera */
+    transition: all 0.3s linear;/*0.3s过渡时间*/
+    -moz-transition: all 0.3s linear; /* Firefox 4 */
+    -webkit-transition: all 0.3s linear; /* Safari 和 Chrome */
+
+    /*边框*/
+    border: solid 1px rgba(102, 146, 191, 0.68);
+    /*边角弧度*/
+    border-radius: 10px;
+    box-shadow: 7px 15px 30px #285a63;
+}
+.whole .Content .ContentTop{
+
+}
+.whole .Content .ContentTop>img{
+    width: 200px;
+    height: 100px;
+}
+.whole .Content .ContentTop .muyefeiwu{
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    background-image: linear-gradient(to right,#bae2fa,#ff6363);
+}
+.whole .Content .ContentTop .muyefeiwu p{
+    font-size: 40px;
+}
+.whole .Content .ContentTop .muyefeiwu p span{
+    color:red;
+}
+.whole .Content.lunbo{
+
+}
+
+/*!*这里开始为轮播图*!*/
+/*!*首先准备一个放图片的容器*!*/
+/*.container{*/
+/*    width: 500px;*/
+/*    height: 280px;*/
+/*    position: relative;*/
+/*    top: 100px;*/
+/*    left: 30%;*/
+/*    !*border: 1px solid #ccc;*!*/
+/*}*/
+
+/*!*图片样式*!*/
+/*.container img{*/
+/*    position: absolute;        !*把所有图片放在同一个位置*!*/
+/*    width: 100%;*/
+/*    transition-duration: 1s;    !*设置过渡时间*!*/
+/*    opacity: 0;                !*把所有图片变透明*!*/
+/*}*/
+/*!*图片显示开关*!*/
+/*.container img.on{*/
+/*    opacity: 1;                !*用于显示图片*!*/
+/*}*/
+
+/*!*左右按钮 按钮用图片更好点,这里为了简便就用大于小于号*!*/
+/*.left, .right{*/
+/*    position: absolute;*/
+/*    top: 30%;*/
+/*    width: 60px;*/
+/*    height: 100px;*/
+/*    line-height: 100px;*/
+/*    background-color: #666;*/
+/*    opacity: 0.5;*/
+/*    text-align: center;*/
+/*    font-size: 60px;*/
+/*    color: #ccc;*/
+/*    display: none;    !*先隐藏按钮*!*/
+/*    cursor: pointer;    !*设置鼠标悬停时的样式*!*/
+/*}*/
+/*.left{*/
+/*    left: 0;*/
+/*}*/
+/*.right{*/
+/*    right: 0;*/
+/*}*/
+/*.container:hover .left, .container:hover .right{*/
+/*    display: block;            !*鼠标悬停才容器范围内时显示按钮*!*/
+/*}*/
+/*.left:hover, .right:hover{*/
+/*    color: #fff;*/
+/*}*/
+
+/*!*焦点*!*/
+/*.container ul{*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    max-width: 500px;*/
+/*    padding: 5px 200px;*/
+/*}*/
+/*.container ul li{*/
+/*    list-style: none;*/
+/*    float: left;*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    border-radius: 50%;*/
+/*    margin-left: 10px;*/
+/*    background-color: #ccc;*/
+/*    cursor: pointer;*/
+/*}*/
+/*.container ul li.active{*/
+/*    background-color: #fff;        !*焦点激活时的样式*!*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
